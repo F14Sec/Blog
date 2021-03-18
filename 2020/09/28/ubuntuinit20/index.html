@@ -509,22 +509,12 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-10
+                    2021-03-18
                 </div>
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    231
-                </div>
-                
 
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
-                </div>
                 
 
                 
@@ -541,51 +531,99 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="新装Ubuntu系统快速环境搭建定制脚本"><a href="#新装Ubuntu系统快速环境搭建定制脚本" class="headerlink" title="新装Ubuntu系统快速环境搭建定制脚本"></a>新装Ubuntu系统快速环境搭建定制脚本</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
-<span class="token comment"># 先换源</span>
-
-<span class="token comment"># 再更新</span>
+                <h1 id="新装Ubuntu系统快速环境搭建定制脚本"><a href="#新装Ubuntu系统快速环境搭建定制脚本" class="headerlink" title="新装Ubuntu系统快速环境搭建定制脚本"></a>新装Ubuntu系统快速环境搭建定制脚本</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># update</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> update
 <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade
+<span class="token function">sudo</span> <span class="token function">apt-get</span> autoremove
 <span class="token function">sudo</span> <span class="token function">apt-get</span> dist-upgrade
+<span class="token function">sudo</span> snap refresh all
 
+<span class="token comment"># install</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> net-tools
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> gnome-tweaks
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">curl</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3-pip
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> deepin-terminal
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> wireshark-qt
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> aircrack-ng
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> hydra
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> mysql-client
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> smbclient
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> filezilla
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> binwalk
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ghex
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> tree
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> flameshot
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> php7.4-cli
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libgconf2-dev
 
-<span class="token comment"># 初始化</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> net-tools
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python3-pip
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gnome-tweaks
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> filezilla
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">curl</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> wireshark
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> nmap
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> sqlmap
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> binwalk
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gimp
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gedit-plugins
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> deepin-screenshot
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ghex
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> aircrack-ng
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> hydra
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> nikto
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> whois
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> smbclient
-
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">git</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> nodejs
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">npm</span>
-<span class="token function">sudo</span> <span class="token function">npm</span> i hexo-cli -g
-
+<span class="token comment"># ssr</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libcanberra-gtk-module gconf2 gconf-service libappindicator1
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libssl-dev
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libsodium-dev
 <span class="token function">sudo</span> dpkg -i electron-ssr-0.3.0-alpha.6.deb
-<span class="token function">sudo</span> dpkg -i google-chrome-stable_current_amd64.deb
-<span class="token function">sudo</span> dpkg -i code_1.52.1-1608136922_amd64.deb
-<span class="token function">sudo</span> dpkg -i balena-etcher-electron_1.5.113_amd64.deb
+
+<span class="token comment"># hexo</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">npm</span>
+<span class="token function">sudo</span> <span class="token function">npm</span> i hexo-cli -g
+<span class="token function">sudo</span> <span class="token function">npm</span> i hexo-permalink-pinyin --save
+<span class="token function">sudo</span> <span class="token function">npm</span> i hexo-wordcount --save
+<span class="token function">sudo</span> <span class="token function">npm</span> i hexo-deployer-git --sav
+
+<span class="token comment"># snap</span>
+<span class="token function">sudo</span> snap <span class="token function">install</span> nmap
+<span class="token function">sudo</span> snap <span class="token function">install</span> sqlmap
+<span class="token function">sudo</span> snap <span class="token function">install</span> obs-studio
+
+<span class="token comment"># dpkg</span>
 <span class="token function">sudo</span> dpkg -i wps-office_11.1.0.10161_amd64.deb
-<span class="token function">sudo</span> dpkg -i XMind-2020-for-Linux-amd-64bit-10.2.1-202008051959.deb
-<span class="token function">sudo</span> dpkg -i baidunetdisk_3.5.0_amd64.deb
+<span class="token function">sudo</span> dpkg -i code_1.54.3-1615806378_amd64.deb
+<span class="token function">sudo</span> dpkg -i XMind-2020-for-Linux-amd-64bit-10.3.1-202101132117.deb
+<span class="token function">sudo</span> dpkg -i google-chrome-stable_current_amd64.deb
 
+<span class="token comment"># qt</span>
+./qt-opensource-linux-x64-5.12.10.run
 
-<span class="token comment"># 改配置</span>
-<span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/bin/python3 /usr/bin/python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># jdk</span>
+<span class="token function">sudo</span> <span class="token function">tar</span> -zxf jdk-11.0.10_linux-x64_bin.tar.gz -C /opt/
+<span class="token builtin class-name">echo</span> <span class="token string">"
+# JDK 11
+export JAVA_HOME=/opt/jdk-11.0.10
+export JRE_HOME=<span class="token variable">$&#123;JAVA_HOME&#125;</span>/jre
+export CLASSPATH=.:%&#123;JAVA_HOME&#125;/lib:%&#123;JRE_HOME&#125;/lib
+export PATH=\<span class="token variable">$&#123;JAVA_HOME&#125;</span>/bin:\<span class="token environment constant">$PATH</span>"</span> <span class="token operator">>></span> ~/.bashrc
+
+<span class="token comment"># ln</span>
+<span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/bin/python3 /usr/bin/python
+
+<span class="token comment"># fonts</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> xfonts-wqy
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ttf-wqy-zenhei
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ttf-wqy-microhei
+
+<span class="token comment"># desktop</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"[Desktop Entry]
+Type=Application
+Exec=<span class="token entity" title="\&quot;">\"</span>/home/nuf/Hack/4-Backdoor/AntSword-Loader/AntSword<span class="token entity" title="\&quot;">\"</span> %F
+Name=AntSword
+Icon=/home/nuf/Hack/4-Backdoor/AntSword-Loader/logo.png
+Terminal=false"</span> <span class="token operator">></span> ~/.local/share/applications/antsword.desktop
+
+<span class="token builtin class-name">echo</span> <span class="token string">"[Desktop Entry]
+Version=1.0
+Name=Telegram Desktop
+Comment=Official desktop version of Telegram messaging app
+TryExec=/opt/Telegram/Telegram
+Exec=/opt/Telegram/Telegram -workdir /home/nuf/.local/share/TelegramDesktop/ -- %u
+Icon=/home/nuf/Pictures/logo/telegram.svg
+Terminal=false
+StartupWMClass=TelegramDesktop
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;
+Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
+X-GNOME-UsesNotifications=true"</span> <span class="token operator">></span> ~/.local/share/applications/telegram.desktop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -709,8 +747,7 @@
                 <a href="/2020/10/06/docker-notes/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Docker-Notes">
+                        <img src="https://gitee.com/NuFi4g/images/raw/NuFi4g/blog/docker.png" class="responsive-img" alt="Docker-Notes">
                         
                         <span class="card-title">Docker-Notes</span>
                     </div>
@@ -762,8 +799,7 @@
                 <a href="/2020/09/20/h5weichatapp/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="H5weichatApp">
+                        <img src="https://gitee.com/NuFi4g/images/raw/NuFi4g/blog/hw.png" class="responsive-img" alt="H5weichatApp">
                         
                         <span class="card-title">H5weichatApp</span>
                     </div>
